@@ -1,0 +1,47 @@
+.post-header{
+    display: flex;
+    align-items: center;
+}
+
+.post-header p{
+    margin-right: 4px;
+    color: black;
+    font-weight: bolder;
+    background-color: white;
+    padding: 2px;
+}
+
+.question {
+    font-weight: 500;
+    color:white
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input{
+    padding:8px;
+    border:none;
+    border-right:none;
+    outline:none;
+    width:100%;
+    margin-top:4px;
+    font-weight:600;
+}
+
+button {
+    padding:8px 10px;
+    font-weight:600;
+    background-color:#eee;
+    cursor:pointer;
+    border:none;
+}
+
+form button{
+    margin-bottom: 0px;
+}

@@ -1,0 +1,40 @@
+.app{
+    margin-left:auto;
+    margin-right:auto;
+    max-width:400px;
+}
+
+.post{
+    
+    display:flex;
+    flex-direction:column;
+}
+
+.app-title{
+    color:white;
+    font-weight:bold;
+    text-align: center;
+    background-color:crimson;
+    border:1px solid rgb(172, 14, 14);
+}
+
+.errorText{
+    color:red;
+}
+
+.answer-num{
+    color:white;
+    font-size:18;
+    text-align:center;
+}
+
+.questions-available{
+    margin-top: 5;
+    margin-bottom: 5;
+    color: white;
+}
+
+.create-link{
+    margin-top: 10;
+    margin-bottom: 10;
+}
