@@ -1,4 +1,4 @@
-import React, { FC, ReactChild, useState } from 'react'
+import React, { ReactChild, useState } from 'react'
 import { Post, PostsContextInterface } from '../interfaces'
 import { postsContext } from './postsContext'
 
@@ -6,7 +6,7 @@ interface Props {
     children: ReactChild
 }
 
-const PostsContextProvider: FC<Props> = ({ children }) => {
+const PostsContextProvider: React.FC<Props> = ({ children }) => {
     const [posts, setPosts] = useState<Post[]>([
         { question: 'what color is the sky', answer: "blue" },
     ])

@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React from 'react';
 import AppRouter from './AppRouter';
 import PostsContextProvider from './context';
 
-const App: FC = () => {
+const App: React.FC = () => {
   return (
     <PostsContextProvider>
       <AppRouter />

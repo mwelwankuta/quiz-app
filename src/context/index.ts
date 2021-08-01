@@ -1,2 +1,2 @@
 import PostsContextProvider from "./PostsContextProvider";
-export default PostsContextProvider
+export default PostsContextProvider;

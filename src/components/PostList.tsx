@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FC, useRef, useState } from 'react'
+
 import '../styles/PostList.css'
 
 interface Props {
@@ -22,10 +23,10 @@ const PostList: FC<Props> = (props) => {
         setFailCount
     } = props
 
-    const [text, setText] = useState("")
+    const [text, setText] = useState<string>("")
     const answerInputRef = useRef<HTMLButtonElement | null>(null)
 
-    const handleSubmitAnswer = () => {
+    const handleSubmitAnswer = (): void => {
         if (answer.toLowerCase().includes(text.toLowerCase())) {
             setCorrectCount(correctCount + 1)
         } else {
@@ -44,7 +45,7 @@ const PostList: FC<Props> = (props) => {
                 <input
                     type="text"
                     placeholder="Type here..."
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => setText(e.target.value)}
+                    onChange={({target}: ChangeEvent<HTMLInputElement>) => setText(target.value)}
                 />
                 <button
                     ref={answerInputRef}

@@ -1,4 +1,4 @@
-import React, { FC, useState, useContext, ChangeEvent } from 'react'
+import React, { useState, useContext, ChangeEvent } from 'react'
 import { Link } from 'react-router-dom'
 
 import { postsContext } from '../context/postsContext'
@@ -6,14 +6,14 @@ import { Post } from '../interfaces'
 
 import '../styles/page.css'
 
-const Dash: FC = () => {
+const Dash: React.FC = () => {
 
   const [question, setQuestion] = useState("")
   const [answer, setAnswer] = useState("")
 
   const posts = useContext(postsContext)
 
-  const addPostHandler = (event: ChangeEvent<HTMLFormElement>) => {
+  const addPostHandler = (event: ChangeEvent<HTMLFormElement>): void => {
     event.preventDefault()
     const post: Post = {
       question,

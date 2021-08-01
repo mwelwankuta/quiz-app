@@ -1,32 +1,36 @@
-import React, { FC, useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { Post } from '../interfaces'
+import { Post, PostsContextInterface } from '../interfaces'
 import { postsContext } from '../context/postsContext'
 import PostList from '../components/PostList'
 
 import '../styles/page.css'
 
-const Home: FC = () => {
-  const [showResults, setShowResults] = useState(false)
-  const [correctCount, setCorrectCount] = useState(0)
-  const [failCount, setFailCount] = useState(0)
+const Home: React.FC = () => {
 
-  const [showCompletionError, setShowCompletionError] = useState(false)
+  const [showResults, setShowResults] = useState<boolean>(false)
+  const [correctCount, setCorrectCount] = useState<number>(0)
+  const [failCount, setFailCount] = useState<number>(0)
 
-  const posts = useContext(postsContext)
+  const [showCompletionError, setShowCompletionError] = useState<boolean>(false)
 
-  const showResultsHandler = () => {
+  const posts = useContext<PostsContextInterface | null>(postsContext)
+
+  const showResultsHandler = (): void => {
     if (correctCount + failCount === posts?.posts.length) {
       setShowResults(true)
       setShowCompletionError(false)
+      
+      setTimeout(() => {
+        window.location.reload()
+      }, 3500)
     } else {
       setShowCompletionError(true)
     }
-    setTimeout(() => {
-      window.location.reload()
-    }, 3500)
+   
   }
+
   return (
     <div className="app">
       <h1 className="app-title" >Quiz Time</h1>
